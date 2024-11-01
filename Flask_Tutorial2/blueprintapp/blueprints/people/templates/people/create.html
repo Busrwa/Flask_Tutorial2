@@ -1,0 +1,21 @@
+{% extends "base.html" %} <!-- For to import base html template -->
+{% block title %} People {% endblock %} <!-- Adding Title -->
+
+{%  block content %}
+   <h1>Create Person</h1>
+    <form method="POST" action="{{ url_for('people.create') }}">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+    </div>
+    <div>
+        <label for="job">Job:</label>
+        <input type="text" id="job" name="job" required>
+    </div>
+    <button type="submit">Create</button>
+</form>
+{% endblock %}

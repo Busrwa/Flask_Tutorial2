@@ -1,0 +1,10 @@
+{% extends "base.html" %} <!-- For to import base html template -->
+{% block title %} Home {% endblock %} <!-- Adding Title -->
+
+{%  block content %}
+    <h1>Home</h1>
+    <a href="{{ url_for("todos.index") }}">Todos</a>
+    <a href="{{ url_for("people.index") }}">People</a>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- Like this way you can chance page title for each page -->
+    <title> {% block title %}  Default Value {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+
+</head>
+<body>
+<!-- It is how you can display the messages -->
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith %}
+
+BUSRA App
+{% block content %} {% endblock %}
+
+<script src="/js/bootstrap.js"></script>
+</body>
+</html>

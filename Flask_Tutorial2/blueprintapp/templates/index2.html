@@ -1,0 +1,33 @@
+{% extends "base.html" %} <!-- For to import base html template -->
+{% block title %} Index Page {% endblock %} <!-- Adding Title -->
+
+{%  block content %}
+<p>
+    {{ myvalue }}
+</p>
+<p>
+    {{ myresult }}
+</p>
+<p>
+    {{ mylist }}
+</p>
+<ul>
+        {% for item in mylist %}
+            hello
+            {% if item == 30 %}
+            <li style="color: red">{{ item }}</li>
+            {% else %}
+                <li>{{ item }}</li>
+            {% endif %}
+
+        {% endfor %}
+
+        {% for item in mylist %}
+            <li{% if item == 30 %} style="color: red"{% endif %}>{{ item }}</li>
+        {% endfor %}
+</ul>
+
+    <a href="{{ url_for('other') }}"> Other </a>
+    <!-- We don't have to write url. we can find the page with function name to. -->
+
+{% endblock %}
